@@ -49,8 +49,8 @@ parser     = argparse.ArgumentParser( description = text )
 parser.add_argument("--number_of_consecutive_samples", help="seg. length", default=None, required=True )
 parser.add_argument("--number_of_training_segments", help="size of dataset", default=None, required=True )
 parser.add_argument("--ASCII_file_dir", help="place to find raw files", default=None, required=True )
-parser.add_argument("--metadata_file", help="place to find raw files", default=None, required=True )
-parser.add_argument("--output_file", help="place to find raw files", default=None, required=True )
+parser.add_argument("--metadata_file", help="list of ASCII files with 4 columns", default=None, required=True )
+parser.add_argument("--output_file", help="output file", default=None, required=True )
 
 args = parser.parse_args()
 
