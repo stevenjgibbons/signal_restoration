@@ -46,4 +46,22 @@ indices_files/set00002_256_40000.txt
 indices_files/set00003_256_100000.txt
 ```
 
+Now that we have chosen which segments, we have to construct and train the model.  
+For this, we need a python script with a name like  
+```
+create_and_train_model_def001.py
+```
+
+Every time that a model definition or loss function is changed, we need to make a new script.
+The script is driven by a shell script  
+```
+sh ./run_create_and_train_model.sh   seglen   segdefname            model_definition
+sh ./run_create_and_train_model.sh    256     set00001_256_40000    def001
+```
+
+This should generate a model saved in the directory *models* e.g.
+```
+models/set00001_256_40000_def001
+```
+
 
