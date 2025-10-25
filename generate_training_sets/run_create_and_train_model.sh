@@ -10,6 +10,8 @@ then
   echo "sh $scriptname    256     set00002_256_40000    def001           "
   echo "sh $scriptname    256     set00003_256_100000   def001           "
   echo
+  echo "sh $scriptname    256     set00001_256_40000    def002           "
+  echo
   exit 1
 fi
 #
