@@ -64,4 +64,8 @@ This should generate a model saved in the directory *models* e.g.
 models/set00001_256_40000_def001
 ```
 
-
+The file 
+```
+linker.sh
+```
+simply creates a symbolic link to the folder where the waveform segments are held - prevents having long strings in scripts. You will obviously need to adapt this if you use this method.  
