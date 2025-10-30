@@ -10,6 +10,21 @@ then
   echo "sh $scriptname    256      40000    set00002  "
   echo "sh $scriptname    256     100000    set00003  "
   echo
+  echo "sh $scriptname    128     100000    set00004  "
+  echo
+  echo "Maybe best to include the number of segments in the set names"
+  echo
+  echo "sh $scriptname    256      50000    set0001_050000  "
+  echo "sh $scriptname    256      50000    set0002_050000  "
+  echo "sh $scriptname    256      50000    set0003_050000  "
+  echo "sh $scriptname    256      50000    set0004_050000  "
+  echo "sh $scriptname    256      50000    set0005_050000  "
+  echo
+  echo "sh $scriptname    256     100000    set0001_100000  "
+  echo "sh $scriptname    256     100000    set0002_100000  "
+  echo "sh $scriptname    256     100000    set0003_100000  "
+  echo "sh $scriptname    256     100000    set0004_100000  "
+  echo "sh $scriptname    256     100000    set0005_100000  "
   exit 1
 fi
 #
