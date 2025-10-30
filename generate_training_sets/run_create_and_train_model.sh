@@ -11,6 +11,29 @@ then
   echo "sh $scriptname    256     set00003_256_100000   def001           "
   echo
   echo "sh $scriptname    256     set00001_256_40000    def002           "
+  echo "sh $scriptname    256     set00001_256_40000    def003           "
+  echo
+  echo "sh $scriptname    128     set00004_128_100000   def003_128       "
+  echo
+  echo "sh $scriptname    256     set0001_256_50000     def001       "
+  echo "sh $scriptname    256     set0001_256_50000     def002       "
+  echo "sh $scriptname    256     set0001_256_50000     def003       "
+  echo
+  echo "sh $scriptname    256     set0002_256_50000     def001       "
+  echo "sh $scriptname    256     set0002_256_50000     def002       "
+  echo "sh $scriptname    256     set0002_256_50000     def003       "
+  echo
+  echo "sh $scriptname    256     set0003_256_50000     def001       "
+  echo "sh $scriptname    256     set0003_256_50000     def002       "
+  echo "sh $scriptname    256     set0003_256_50000     def003       "
+  echo
+  echo "sh $scriptname    256     set0004_256_50000     def001       "
+  echo "sh $scriptname    256     set0004_256_50000     def002       "
+  echo "sh $scriptname    256     set0004_256_50000     def003       "
+  echo
+  echo "sh $scriptname    256     set0005_256_50000     def001       "
+  echo "sh $scriptname    256     set0005_256_50000     def002       "
+  echo "sh $scriptname    256     set0005_256_50000     def003       "
   echo
   exit 1
 fi

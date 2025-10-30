@@ -13,18 +13,25 @@ then
   echo "sh $scriptname    128     100000    set00004  "
   echo
   echo "Maybe best to include the number of segments in the set names"
+  echo "No - not needed as the number of samples is added to the string!"
   echo
-  echo "sh $scriptname    256      50000    set0001_050000  "
-  echo "sh $scriptname    256      50000    set0002_050000  "
-  echo "sh $scriptname    256      50000    set0003_050000  "
-  echo "sh $scriptname    256      50000    set0004_050000  "
-  echo "sh $scriptname    256      50000    set0005_050000  "
+  echo "sh $scriptname    256      50000    set0001         "
+  echo "sh $scriptname    256      50000    set0002         "
+  echo "sh $scriptname    256      50000    set0003         "
+  echo "sh $scriptname    256      50000    set0004         "
+  echo "sh $scriptname    256      50000    set0005         "
   echo
-  echo "sh $scriptname    256     100000    set0001_100000  "
-  echo "sh $scriptname    256     100000    set0002_100000  "
-  echo "sh $scriptname    256     100000    set0003_100000  "
-  echo "sh $scriptname    256     100000    set0004_100000  "
-  echo "sh $scriptname    256     100000    set0005_100000  "
+  echo "sh $scriptname    256     100000    set0001         "
+  echo "sh $scriptname    256     100000    set0002         "
+  echo "sh $scriptname    256     100000    set0003         "
+  echo "sh $scriptname    256     100000    set0004         "
+  echo "sh $scriptname    256     100000    set0005         "
+  echo
+  echo "sh $scriptname    256     200000    set0001         "
+  echo "sh $scriptname    256     200000    set0002         "
+  echo "sh $scriptname    256     200000    set0003         "
+  echo "sh $scriptname    256     200000    set0004         "
+  echo "sh $scriptname    256     200000    set0005         "
   exit 1
 fi
 #
