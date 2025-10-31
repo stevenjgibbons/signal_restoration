@@ -42,7 +42,8 @@ def process_file(filename):
         _, y_val, status_val = parts
         data.append((float(y_val), int(status_val)))
 
-    y = np.array([d[0] for d in data], dtype=np.float32)
+    y      = np.array([d[0] for d in data], dtype=np.float32)
+    y_orig = np.array([d[0] for d in data], dtype=np.float32)
     status = np.array([d[1] for d in data], dtype=np.float32)
 
     if np.all(status == 0):
@@ -75,9 +76,10 @@ def process_file(filename):
     # Plot
     plt.figure(figsize=(12, 5))
     unclipped_indices = np.where(status == 0)[0]
-    plt.plot(unclipped_indices, y[unclipped_indices], color='blue', label='Original')
+    # plt.plot(unclipped_indices, y[unclipped_indices], color='blue', label='Original')
     allindices = np.where(status != 6)[0]
     plt.plot(allindices, y[allindices], color='black', label='Reconstructed')
+    plt.plot(allindices, y_orig[allindices], color='green', label='Original')
 
     clipped_indices = np.where(status != 0)[0]
     for j in clipped_indices:
