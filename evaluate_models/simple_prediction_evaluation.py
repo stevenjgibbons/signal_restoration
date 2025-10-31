@@ -9,6 +9,8 @@ clip_threshold = 0.2
 # modelname      = "../generate_training_sets/models/set0001_256_50000_def001"
 # modelname      = "../generate_training_sets/models/set00001_256_40000_def001"
 # modelname      = "../generate_training_sets/models/set00003_256_100000_def001"
+# First line of this file is
+# 11045 0.373 outfiles/19720826.0347.brvk.KODB.SHZ0.030.txtseg00000590
 samplesfile    = "../generate_training_sets/indices_files/set00003_256_100000.txt"
 modelname      = "../generate_training_sets/models/set0002_256_200000_def003"
 
