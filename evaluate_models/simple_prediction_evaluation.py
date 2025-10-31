@@ -5,9 +5,12 @@ from tensorflow.keras.models import load_model
 # Parameters
 segment_length = 256
 clip_threshold = 0.2
+# modelname      = "../generate_training_sets/models/set00001_256_40000_def003"
+# modelname      = "../generate_training_sets/models/set0001_256_50000_def001"
 # modelname      = "../generate_training_sets/models/set00001_256_40000_def001"
-modelname      = "../generate_training_sets/models/set00003_256_100000_def001"
+# modelname      = "../generate_training_sets/models/set00003_256_100000_def001"
 samplesfile    = "../generate_training_sets/indices_files/set00003_256_100000.txt"
+modelname      = "../generate_training_sets/models/set0002_256_200000_def003"
 
 # Load model (assuming your format works)
 model = load_model( modelname )
@@ -65,7 +68,8 @@ for line_index, line in enumerate(lines):
         plt.plot(y_clipped * max_abs, label='Clipped y', color='blue')
         plt.plot(y_pred, label='Predicted y', color='grey')
         plt.title(f"Sample {line_index + 1}: {filename} leaky large kernel")
-        plt.xlabel("Sample Index")
+        plt.xlabel( modelname )
+        # plt.xlabel("Sample Index")
         plt.ylabel("Amplitude")
         plt.legend()
         plt.tight_layout()
