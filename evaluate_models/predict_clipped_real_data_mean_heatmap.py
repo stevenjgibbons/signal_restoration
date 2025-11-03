@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
+from numpy.linalg import lstsq
 import argparse
 import sys
 
@@ -50,8 +51,9 @@ def process_file(filename):
         print("No clipped samples")
         return
 
-    max_abs = np.max(np.abs(y))
-    y_scaled = y / max_abs
+    ## DO NOT SCALE HERE!
+    ## max_abs = np.max(np.abs(y))
+    ## y_scaled = y / max_abs
 
     predictions = [[] for _ in range(len(y))]
 
@@ -60,10 +62,17 @@ def process_file(filename):
         window_status = status[i:i+segment_length]
         if np.any(window_status != 0):
             print ("Window ", i )
-            y_clipped = np.clip(y_scaled[i:i+segment_length], -1.0, 1.0)
-            window_input = np.stack((y_clipped, window_status), axis=-1).reshape(1, segment_length, 2)
-            y_pred_scaled = model.predict(window_input, verbose=0)[0]
-            y_pred = y_pred_scaled * max_abs
+            y_window        = y[i:i+segment_length]
+            # max_abs_local   = np.max( np.abs(y_window) )
+            window_input = np.stack((y_window, window_status), axis=-1).reshape(1, segment_length, 2)
+            y_pred_init   = model.predict(window_input, verbose=0)[0]
+            mask          = window_status == 0
+            y_window_filt = y_window[mask]
+            y_pred_filt   = y_pred_init[mask]
+            A    = np.vstack([y_pred_filt, np.ones_like(y_pred_filt)]).T
+            m, c = lstsq(A, y_window_filt, rcond=None)[0]
+         
+            y_pred = y_pred_init * m + c
             for j in range(segment_length):
                 if window_status[j] != 0:
                     predictions[i + j].append(y_pred[j])
