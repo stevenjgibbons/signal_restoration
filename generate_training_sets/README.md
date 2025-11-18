@@ -69,3 +69,8 @@ The file
 linker.sh
 ```
 simply creates a symbolic link to the folder where the waveform segments are held - prevents having long strings in scripts. You will obviously need to adapt this if you use this method.  
+
+
+The files containing the letters *sbrl* (Scale by running length) replace (in situ) the -1 and +1 of the status functions with -1 or +1 multiplied by the length of the run ... so if you have 4 consecutive -1 values, they will become four consecutive -4 values, etc.  
+This is experimental. I do not know if this will improve the models or not.  
+
